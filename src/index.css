@@ -14,6 +14,8 @@
   --pink: #f47b6e;
   --light-blue: #effbfe;
   --blue: #ace6ec;
+
+  --max-width: 1170px;
 }
 
 /* Set core body defaults */
@@ -47,4 +49,19 @@ picture {
 
 .btn:disabled {
   border-color: lightgray;
+}
+
+.page-100 {
+  min-height: calc(100vh - 5rem);
+  padding: 5rem 0;
+}
+
+/* section */
+.section {
+  padding: 5rem 0;
+}
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
 }
