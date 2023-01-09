@@ -1,0 +1,29 @@
+.nav {
+  height: 5rem;
+  background-color: var(--pink);
+  -webkit-box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+  -moz-box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+  box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--light-blue);
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--red);
+}
+
+.active {
+  color: var(--red);
+}

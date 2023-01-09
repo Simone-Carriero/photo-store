@@ -34,17 +34,6 @@ picture {
   object-fit: cover;
 }
 
-a {
-  text-decoration: none;
-}
-
-a:visited,
-a:hover,
-a:active,
-a:focus {
-  color: var(--light-blue);
-}
-
 .btn {
   border-color: var(--black);
   cursor: pointer;
