@@ -4,9 +4,12 @@ import App from './App';
 import 'remixicon/fonts/remixicon.css';
 import 'normalize.css';
 import './index.css';
+import { GlobalContextProvider } from './context/GlobalContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <GlobalContextProvider>
+      <App />
+    </GlobalContextProvider>
   </React.StrictMode>
 );
