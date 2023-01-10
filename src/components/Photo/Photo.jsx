@@ -1,26 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { useGlobalContext } from '../../context/GlobalContext';
+import useHover from '../../hooks/useHover';
 import './Photo.css';
 
 const Photo = ({ img, className }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [ref, isHovered] = useHover();
   const { toggleFavorite, addToCart, removeFromCart, cartItems } =
     useGlobalContext();
-  const imageRef = useRef(null);
   const { url, isFavorite } = img;
-
-  const mouseEnter = () => setIsHovered(true);
-  const mouseOut = () => setIsHovered(false);
-
-  useEffect(() => {
-    imageRef.current.addEventListener('mouseenter', mouseEnter);
-    imageRef.current.addEventListener('mouseleave', mouseOut);
-
-    return () => {
-      imageRef.current.removeEventListener('mouseenter', mouseEnter);
-      imageRef.current.removeEventListener('mouseleave', mouseOut);
-    };
-  }, []);
 
   function heartIcon() {
     if (isFavorite) {
@@ -58,7 +45,7 @@ const Photo = ({ img, className }) => {
   return (
     <div
       className={`photo ${className}`}
-      ref={imageRef}>
+      ref={ref}>
       <img
         src={url}
         alt='photo'
