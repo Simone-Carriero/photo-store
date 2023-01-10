@@ -11,18 +11,20 @@ const Navbar = () => {
           className={`nav__link ${({ isActive }) => isActive && 'active'}`}>
           <h2>Pic Some</h2>
         </NavLink>
-        <NavLink
-          to='/favorite'
-          className={`nav__link ${({ isActive }) => isActive && 'active'}`}>
-          <h2>Favorite</h2>
-        </NavLink>
-        <NavLink
-          to='/cart'
-          className={`nav__link ${({ isActive }) => isActive && 'active'}`}>
-          <span>
-            <i className='ri-shopping-cart-line ri-fw ri-2x'></i>
-          </span>
-        </NavLink>
+        <div className='nav__block'>
+          <NavLink
+            to='/favorite'
+            className={`nav__link ${({ isActive }) => isActive && 'active'}`}>
+            <h2>Favorite</h2>
+          </NavLink>
+          <NavLink
+            to='/cart'
+            className={`nav__link ${({ isActive }) => isActive && 'active'}`}>
+            <span>
+              <i className='ri-shopping-cart-line ri-fw ri-2x'></i>
+            </span>
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
