@@ -1,0 +1,25 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item__container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cart-item__img {
+  width: 10rem;
+}
+
+.cart-item__price {
+  font-size: 1.3rem;
+}
+
+.ri-delete-bin-line,
+.ri-delete-bin-fill {
+  font-size: 1.3rem;
+  cursor: pointer;
+}

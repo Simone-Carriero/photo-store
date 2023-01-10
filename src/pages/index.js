@@ -1,6 +1,6 @@
 import SharedLayout from './SharedLayout';
 import Photos from './Photos';
-import Cart from './Cart';
+import Cart from './CartPage/Cart';
 import Favorite from './Favorite';
 import Error from './ErrorPage/Error';
 
