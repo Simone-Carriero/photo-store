@@ -1,8 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useGlobalContext } from '../../context/GlobalContext';
 import './Navbar.css';
 
 const Navbar = () => {
+  const { cartItems } = useGlobalContext();
+
+  const isCartFilled = cartItems.length ? (
+    <i className='ri-shopping-cart-fill ri-fw ri-2x'></i>
+  ) : (
+    <i className='ri-shopping-cart-line ri-fw ri-2x'></i>
+  );
+
   return (
     <nav className='nav'>
       <div className='nav__container'>
@@ -20,9 +29,7 @@ const Navbar = () => {
           <NavLink
             to='/cart'
             className={`nav__link ${({ isActive }) => isActive && 'active'}`}>
-            <span>
-              <i className='ri-shopping-cart-line ri-fw ri-2x'></i>
-            </span>
+            <span>{isCartFilled}</span>
           </NavLink>
         </div>
       </div>
