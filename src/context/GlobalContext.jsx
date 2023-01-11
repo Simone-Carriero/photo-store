@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
+import {
+  addCartToLocalStorage,
+  getCartFromLocalStorage,
+} from '../utils/localStorage';
 
 const url =
   'https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json';
@@ -7,13 +11,17 @@ const GlobalContext = React.createContext();
 
 export const GlobalContextProvider = ({ children }) => {
   const [allPhotos, setAllPhotos] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(getCartFromLocalStorage());
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllPhotos(data));
   }, []);
+
+  useEffect(() => {
+    addCartToLocalStorage(cartItems);
+  }, [cartItems]);
 
   const toggleFavorite = (id) => {
     const updatedArr = allPhotos.map((photo) => {
