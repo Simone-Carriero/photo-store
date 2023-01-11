@@ -43,7 +43,7 @@ const Photo = ({ img, className }) => {
   }
 
   return (
-    <div
+    <article
       className={`photo ${className}`}
       ref={ref}>
       <img
@@ -52,7 +52,7 @@ const Photo = ({ img, className }) => {
       />
       {heartIcon()}
       {cartIcon()}
-    </div>
+    </article>
   );
 };
 

@@ -12,7 +12,7 @@ const CartItem = ({ item }) => {
   const iconClassName = isHovered ? 'ri-delete-bin-fill' : 'ri-delete-bin-line';
 
   return (
-    <div className='cart-item'>
+    <article className='cart-item'>
       <div className='cart-item__container'>
         <i
           onClick={() => removeFromCart(id)}
@@ -25,7 +25,7 @@ const CartItem = ({ item }) => {
         />
       </div>
       <p className='cart-item__price'>$5.99</p>
-    </div>
+    </article>
   );
 };
 
