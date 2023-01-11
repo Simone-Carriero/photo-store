@@ -3,11 +3,13 @@ import './Cart.css';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import { useGlobalContext } from '../../context/GlobalContext';
 import CartItem from '../../components/CartItem/CartItem';
+import { formatPrice } from '../../utils/formatPrice';
 
 const Cart = () => {
   const [buttonText, setButtonText] = useState('Place Order');
   useDocumentTitle('Cart');
   const { cartItems, emptyCart } = useGlobalContext();
+
   const cartItemsElements = cartItems.map((item) => (
     <CartItem
       key={item.id}
@@ -31,7 +33,9 @@ const Cart = () => {
         <div className='cart__container'>
           {cartItems.length > 0 && cartItemsElements}
         </div>
-        <p className='cart__total'>Total: $0.00</p>
+        <p className='cart__total'>
+          Total: {formatPrice(cartItems.length * 5.99)}
+        </p>
         <div className='cart__order'>
           {cartItems.length > 0 ? (
             <button
