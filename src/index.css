@@ -36,6 +36,32 @@ picture {
   object-fit: cover;
 }
 
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 4rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  h1 {
+    line-height: 1;
+  }
+}
+
 .btn {
   border-color: var(--black);
   cursor: pointer;
@@ -57,7 +83,7 @@ picture {
 
 /* section */
 .section {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 .section-center {
   width: 90vw;
@@ -73,10 +99,6 @@ picture {
 
 .wide {
   grid-column: span 2;
-}
-
-.tall {
-  grid-row: span 2;
 }
 
 .big {
